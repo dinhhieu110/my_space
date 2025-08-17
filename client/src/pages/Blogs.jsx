@@ -1,7 +1,8 @@
-import React from "react";
 import Navbar from "../components/layout/Navbar";
 import Hero from "../components/common/Hero";
 import BlogList from "../components/common/BlogList";
+import NewsLetter from "../components/common/NewsLetter";
+import Footer from "../components/layout/Footer";
 
 const Blogs = () => {
   return (
@@ -9,7 +10,8 @@ const Blogs = () => {
       <Navbar />
       <Hero />
       <BlogList />
-      Blogs page
+      <NewsLetter />
+      <Footer />
     </>
   );
 };
