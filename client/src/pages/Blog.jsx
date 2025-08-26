@@ -12,7 +12,6 @@ const Blog = () => {
   const [comments, setComments] = useState([]);
   const [commentForm, setCommentForm] = useState(null);
 
-  console.log("commentForm:", commentForm);
   const fetchBlogDetails = async () => {
     const result = await blog_data.find((blog) => blog._id === id);
     setData(result);
