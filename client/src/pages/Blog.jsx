@@ -63,7 +63,7 @@ const Blog = () => {
         ></div>
         {/* Comments section */}
         <div className="mt-14 mb-10 max-w-3xl mx-auto">
-          e d<p className="font-semibold mb-4">comments ({comments.length})</p>
+          <p className="font-semibold mb-4">comments ({comments.length})</p>
           <div className="flex flex-col gap-4">
             {comments.map((comment, idx) => (
               <div
