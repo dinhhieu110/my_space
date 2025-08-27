@@ -9,15 +9,17 @@ import {
   Layout,
   Me,
   Comment,
+  Login,
 } from "./pages";
 const App = () => {
+  const isLoggedIn = true;
   return (
     <div>
       <Routes>
         <Route path="/" element={<Me />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blog/:id" element={<Blog />} />
-        <Route path="/admin" element={<Layout />}>
+        <Route path="/admin" element={isLoggedIn ? <Layout /> : <Login />}>
           <Route index element={<Dashboard />} />
           <Route path="add-blog" element={<AddBlog />} />
           <Route path="list-blogs" element={<BlogList />} />
