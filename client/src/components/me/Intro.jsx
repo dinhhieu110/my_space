@@ -10,16 +10,16 @@ export default function Intro() {
       textRef.current.innerHTML = "";
       init(textRef.current, {
         showCursor: false,
-        backSpeed: 80,
-        backDelay: 1200,
-        strings: ["Front-End", "Back-End"],
+        backSpeed: 100,
+        backDelay: 1000,
+        strings: ["Front-End"],
       });
     }
   }, []);
   return (
     <div
       id="intro"
-      className="flex flex-col bg-white text-center xl:flex-row xl:text-left xl:justify-center my-10 mx-8 sm:mx-20 xl:mx-32"
+      className="flex flex-col bg-white text-center xl:flex-row xl:text-left xl:justify-center my-20 mx-8 sm:mx-20 xl:mx-32"
     >
       {/* Left */}
       <div className="flex-1 overflow-hidden flex justify-center items-center">
@@ -36,7 +36,11 @@ export default function Intro() {
             Tran Dinh Hieu (Wilson Tran)
           </h1>
           <h3 className="text-[20px] md:text-[30px]">
-            A <span ref={textRef} className="text-primary" /> Software Developer
+            A <span ref={textRef} className="text-primary font-bold" /> Software
+            Developer
+          </h3>
+          <h3 className="text-[20px] md:text-[30px]">
+            It's my pleasure to collaborate with you.
           </h3>
         </div>
 

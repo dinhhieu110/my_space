@@ -9,6 +9,7 @@ import {
   Me,
   Comment,
   Login,
+  Project,
 } from "./pages";
 import { Route, Routes } from "react-router-dom";
 import { Fragment } from "react";
@@ -19,6 +20,7 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route path={RoutePath.Base} element={<Me />} />
+      <Route path={RoutePath.Project} element={<Project />} />
       <Route path={RoutePath.Blogs} element={<Blogs />} />
       <Route path={RoutePath.Blog} element={<Blog />} />
       <Fragment key="Admin">

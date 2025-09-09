@@ -33,6 +33,17 @@ import dashboard_icon_4 from "./dashboard_icon_4.svg";
 import logo from "./h_letter.png";
 import avt from "./avt.jpg";
 import down from "./down.png";
+import mpa from "./mpa.jpg";
+import logpresso from "./logpresso.png";
+import sirloin from "./sirloin.png";
+import project_influencer from "./team_project_01.png";
+import project_cinema from "./teamproject_02.png";
+import sparking_stones from "./team_project_03.png";
+import project_bot from "./project_bot.png";
+import project_candy from "./project_candy.png";
+import project_doctor from "./project_doctor.png";
+import project_chat from "./project_chat.png";
+import project_trade from "./project_trade.png";
 
 export const assets = {
   down,
@@ -69,6 +80,507 @@ export const blogCategories = [
   "Finance",
 ];
 
+export const projectCategories = ["Enterprise", "Team", "Personal"];
+
+export const project_data = [
+  {
+    _id: "mpa",
+    title: "MPA (Singapore) | @AvePoint",
+    subTitle: "Enterprise-scale Project & Contract Management System",
+    description: `
+      <h1>Maritime Port Authority (Singapore)</h1>
+      <p>
+        Developed at <strong>AvePoint Company</strong> between <em>Feb 2024 - Jun 2025</em>, 
+        this Enterprise-scale <strong>Project and Contract Management System</strong> 
+        was designed to streamline maritime operations, improve contract oversight, 
+        and enhance cross-stakeholder collaboration.
+      </p>
+      <h2>Team Size</h2>
+      <p>20 members (7 front-end, 5 back-end, BAs and QAs)</p>
+      <h2>Technologies</h2>
+      <ul>
+        <li>Front-end: React + TypeScript + Fluent UI + SASS</li>
+        <li>Back-end: ASP.NET Web API + MS SQL Server</li>
+      </ul>
+      <h2>Responsibilities</h2>
+      <ul>
+        <li>Developed and maintained reusable common UI components and shared layout structures for consistency and scalability.</li>
+        <li>Implemented multiple complex functional modules and pages aligned with UX requirements.</li>
+        <li>Collaborated with Singaporean and Chinese Business Analysts to clarify complex business logic and communicate effectively with Team members.</li>
+        <li>Participated in agile ceremonies (daily standups, sprint reviews) and handled high-priority JIRA tickets to resolve bugs and improve performance.</li>
+      </ul>
+    `,
+    category: "Enterprise",
+    image: mpa,
+    createdAt: "2025-06-25T10:00:00.000Z", // example timestamp
+    updatedAt: "2025-06-25T10:00:00.000Z",
+    __v: 0,
+    isPublished: true,
+  },
+  // {
+  //   _id: "mpa-iss-001",
+  //   title: "MPA ISS (Singapore) | @AvePoint",
+  //   subTitle: "Port and Marine Services Management System",
+  //   description: `
+  //     <h1>Maritime Port Authority ISS (Singapore)</h1>
+  //     <p>
+  //       Developed at <strong>AvePoint Company</strong> between <em>Jan 2025 - Jun 2025</em>,
+  //       this system was built for the <strong>Maritime Port Authority of Singapore (MPA)</strong>
+  //       to regulate and manage port and marine services, facilities, and activities
+  //       within Singaporean waters. It covers vessel traffic management, navigational
+  //       safety, operational efficiency, and environmental compliance.
+  //     </p>
+  //     <h2>Team Size</h2>
+  //     <p>26 members (12 front-end, 8 back-end, BAs and QAs)</p>
+  //     <h2>Technologies</h2>
+  //     <ul>
+  //       <li>Front-end: React + TypeScript + Ant Design + SASS</li>
+  //       <li>Back-end: ASP.NET Web API + MS SQL Server</li>
+  //     </ul>
+  //     <h2>Key Responsibilities</h2>
+  //     <ul>
+  //       <li>Conducted technical research and contributed to the initial frontend setup and theme configuration using Ant Design’s theming system.</li>
+  //       <li>Collaborated with the Chinese leader to establish project structure and coding conventions for Team members.</li>
+  //       <li>Analyzed designs and developed reusable common UI components.</li>
+  //       <li>Implemented multiple complex modules and pages aligned with UX requirements.</li>
+  //       <li>Managed and tracked the task progress of frontend Team members.</li>
+  //     </ul>
+  //   `,
+  //   category: "Enterprise",
+  //   image: mpa,
+  //   createdAt: "2025-06-25T10:00:00.000Z", // example timestamp
+  //   updatedAt: "2025-06-25T10:00:00.000Z",
+  //   __v: 0,
+  //   isPublished: true,
+  // },
+  {
+    _id: "logpresso",
+    title: "Logpresso (Korea) | @Sotatek",
+    subTitle: "Automated Security Operation Platform",
+    description: `
+      <h1>Logpresso (Korea)</h1>
+      <p>
+        Developed at <strong>Sotatek Company</strong> starting from <em>Jun 2025 – Oct 2025</em>, 
+        Logpresso is an <strong>automated security operation platform</strong> that integrates 
+        on-premise, cloud, and SaaS environments to streamline security processes and 
+        improve operational efficiency.
+      </p>
+      <h2>Team Size</h2>
+      <p>5 members (3 front-end, 2 QCs)</p>
+      <h2>Technologies</h2>
+      <ul>
+        <li>Front-end: React.js (TypeScript) + Material UI + Tailwind CSS + Context API</li>
+      </ul>
+      <h2>Key Responsibilities</h2>
+      <ul>
+        <li>Acted as a key front-end developer from project initiation.</li>
+        <li>Built the codebase from scratch and established project structure and best practices.</li>
+        <li>Communicated directly with Korean clients to clarify requirements and provide updates.</li>
+        <li>Assigned, tracked, and managed tasks for Team members to ensure on-time delivery.</li>
+        <li>Developed responsive UIs, integrated APIs, and implemented core features across multiple modules/pages.</li>
+      </ul>
+    `,
+    category: "Enterprise",
+    image: logpresso,
+    createdAt: "2025-06-26T10:00:00.000Z", // example timestamp
+    updatedAt: "2025-06-26T10:00:00.000Z",
+    __v: 0,
+    isPublished: true,
+  },
+  {
+    _id: "sirloin",
+    title: "SirLoin OMS & WMS (Korea) | @Sotatek",
+    subTitle: "Order & Warehouse Management System",
+    description: `
+    <h1>SirLoin OMS & WMS</h1>
+    <p>
+      A comprehensive <strong>Order Management System (OMS)</strong> and 
+      <strong>Warehouse Management System (WMS)</strong> developed for 
+      <strong>SirLoin</strong>, a premium Korean beef shop. 
+      The platform integrates with multiple <strong>e-commerce platforms</strong> 
+      as well as SirLoin’s own online mall to streamline operations.
+    </p>
+    <h2>Key Features</h2>
+    <ul>
+      <li>Automatic collection of orders from 3rd-party e-commerce platforms and SirLoin mall</li>
+      <li>End-to-end <strong>picking, packing, and shipping</strong> workflows</li>
+      <li>Warehouse stock management with real-time updates</li>
+      <li>Optimized dashboards for tracking daily operations</li>
+    </ul>
+    <h2>Team Size</h2>
+    <p>6 members (3 front-end, 3 back-end)</p>
+    <h2>Role</h2>
+    <p>Front-end Developer</p>
+    <h2>Technologies</h2>
+    <ul>
+      <li>React + Typescript + Tailwind CSS</li>
+      <li>Node.js (Express.js) + PostgreSQL</li>
+    </ul>
+  `,
+    category: "Enterprise",
+    image: sirloin,
+    createdAt: "2025-07-01T10:00:00.000Z",
+    updatedAt: "2025-07-01T10:00:00.000Z",
+    __v: 0,
+    isPublished: true,
+  },
+  {
+    _id: "influencer-market",
+    title: "Influencer Marketing Platform",
+    subTitle: "AI-powered KOL/KOC & Brand Collaboration System",
+    description: `
+      <h1>Influencer Marketing Platform</h1>
+      <p>
+        A web platform designed for the <strong>Vietnamese influencer marketing industry</strong>, 
+        connecting <strong>KOLs/KOCs with brands</strong> for product promotion and collaboration. 
+        The platform enables influencer discovery, campaign creation, and provides 
+        <strong>AI-powered interaction insights</strong> to optimize marketing outcomes.
+      </p>
+      <h2>Team Size</h2>
+      <p>5 members (2 front-end, 3 back-end)</p>
+      <h2>Technologies</h2>
+      <ul>
+        <li>Front-end: Next.js + ShadCN UI + Tailwind CSS</li>
+        <li>Back-end: ASP.NET Web API + MS SQL Server</li>
+      </ul>
+      <h2>Role</h2>
+      <ul>
+        <li>Front-end Developer</li>
+      </ul>
+      <h2>Links</h2>
+      <p>
+        <a href="https://lnk.ink/SjgbY" target="_blank" rel="noopener noreferrer">
+          📄 Article
+        </a><br/>
+        <a href="https://github.com/fpt-blue-green" target="_blank" rel="noopener noreferrer">
+          💻 GitHub Repository
+        </a>
+      </p>
+    `,
+    category: "Team",
+    image: project_influencer,
+    createdAt: "2025-06-26T10:00:00.000Z",
+    updatedAt: "2025-06-26T10:00:00.000Z",
+    __v: 0,
+    isPublished: true,
+  },
+  {
+    _id: "cinema",
+    title: "Cinema Booking System",
+    subTitle: "Movie Ticket & Seat Reservation Platform",
+    description: `
+    <h1>Cinema Booking System</h1>
+    <p>
+      A web application that allows users to <strong>browse and search movies</strong>, 
+      <strong>book seats</strong>, and purchase <strong>food, drinks, and combos</strong>. 
+      The platform also provides an <strong>admin dashboard</strong> for managing 
+      movies, seats, promotions, and concession items.
+    </p>
+    <h2>Team Size</h2>
+    <p>Group project (university Team collaboration)</p>
+    <h2>Technologies</h2>
+    <ul>
+      <li>Front-end: Next.js + ShadCN UI + Tailwind CSS</li>
+      <li>Back-end: Node.js + Express</li>
+    </ul>
+    <h2>Key Features</h2>
+    <ul>
+      <li>🎬 Movie browsing & searching</li>
+      <li>🪑 Seat booking with real-time availability</li>
+      <li>🍿 Food, drinks, and combo ordering</li>
+      <li>🛠 Admin dashboard for managing seats, movies, and promotions</li>
+    </ul>
+    <h2>Links</h2>
+    <p>
+      <a href="https://github.com/fpt-wdp301-group6" target="_blank" rel="noopener noreferrer">
+        💻 GitHub Repository
+      </a>
+    </p>
+  `,
+    category: "Team",
+    image: project_cinema,
+    createdAt: "2025-06-26T10:00:00.000Z", // adjust date
+    updatedAt: "2025-06-26T10:00:00.000Z",
+    __v: 0,
+    isPublished: true,
+  },
+  {
+    _id: "sparkling-stones",
+    title: "Sparkling Stones – Jewelry E-commerce Platform",
+    subTitle: "Jewelry Shopping Platform (Diamonds, Gold, Watches)",
+    description: `
+    <h1>Sparkling Stones – Jewelry E-commerce Platform</h1>
+    <p>
+      The <strong>Sparkling Stones</strong> is a web application designed to sell jewelry 
+      such as <strong>diamonds, gold, and watches</strong>. Customers can easily browse, 
+      search, and purchase jewelry with just one click.
+    </p>
+    <h2>Team Size</h2>
+    <p>3 Members – University Team Project (Team Collaboration)</p>
+    <h2>Technologies</h2>
+    <ul>
+      <li>Front-end: JSP + Bootstrap</li>
+      <li>Back-end: Servlet</li>
+      <li>Database: PostgreSQL</li>
+    </ul>
+    <h2>Key Features</h2>
+    <ul>
+      <li>✅ User authentication (customers, users, admin)</li>
+      <li>✅ Search and filter jewelry by categories</li>
+      <li>✅ Track new products and store news</li>
+      <li>✅ Place orders for products</li>
+      <li>✅ Admin dashboard for managing users, products, and analytics</li>
+    </ul>
+    <h2>Authors</h2>
+    <p>
+      👨‍💻 Tran Dinh Hieu (Wilson Tran) – <strong>Team Leader, Full Stack Developer</strong><br/>
+      👨‍💻 Nguyen Hong Duc (Syaoran Nguyen) – Frontend Developer<br/>
+      👨‍💻 Nguyen Van Binh – Backend Developer
+    </p>
+  `,
+    category: "Team",
+    image: sparking_stones,
+    createdAt: "2025-06-26T10:00:00.000Z", // adjust date
+    updatedAt: "2025-06-26T10:00:00.000Z",
+    __v: 0,
+    isPublished: true,
+  },
+
+  {
+    _id: "medbook",
+    title: "MedBook",
+    subTitle: "Doctor Appointment Booking System",
+    description: `
+    <h1>MedBook</h1>
+    <p>
+      A web application designed to <strong>streamline medical appointment scheduling</strong>. 
+      Patients can easily <strong>book appointments with doctors</strong> based on availability, 
+      while doctors can efficiently <strong>manage their schedules</strong>.
+    </p>
+    <h2>Team Size</h2>
+    <p>1 (Personal Project)</p>
+    <h2>Role</h2>
+    <p>Full Stack Developer</p>
+    <h2>Technologies</h2>
+    <ul>
+      <li>ReactJS + Tailwind CSS</li>
+      <li>Node.js (Express.js) + MongoDB</li>
+    </ul>
+    <h2>Links</h2>
+    <p>
+      <a href="https://github.com/dinhhieu110/medbook_system" target="_blank" rel="noopener noreferrer">
+        💻 GitHub Repository
+      </a>
+    </p>
+  `,
+    category: "Personal",
+    image: project_doctor,
+    createdAt: "2024-07-15T10:00:00.000Z",
+    updatedAt: "2024-07-15T10:00:00.000Z",
+    __v: 0,
+    isPublished: true,
+  },
+  {
+    _id: "bot-interview",
+    title: "Bot Interview",
+    subTitle: "AI-Powered Mock Interview Platform",
+    description: `
+    <h1>Bot Interview</h1>
+    <p>
+      An AI-powered web platform that allows users to 
+      <strong>simulate and practice job interviews</strong> through 
+      <strong>intelligent, voice-based conversations</strong>. 
+      The system leverages <strong>Google Gemini</strong> and <strong>Vapi</strong> 
+      to deliver realistic interview scenarios.
+    </p>
+    <h2>Team Size</h2>
+    <p>1 (Personal Project)</p>
+    <h2>Technologies</h2>
+    <ul>
+      <li>Google Gemini + Vapi</li>
+      <li>Next.js 14 + Tailwind CSS</li>
+    </ul>
+    <h2>Links</h2>
+    <p>
+      <a href="https://github.com/dinhhieu110/medbook_system" target="_blank" rel="noopener noreferrer">
+        💻 GitHub Repository
+      </a>
+    </p>
+  `,
+    category: "Personal",
+    image: project_bot,
+    createdAt: "2025-04-19T10:00:00.000Z",
+    updatedAt: "2025-04-19T10:00:00.000Z",
+    __v: 0,
+    isPublished: true,
+  },
+  {
+    _id: "candy-flower",
+    title: "Candy Shaped Flower Shop",
+    subTitle: "E-commerce Platform for Candy & Snack Bouquets",
+    description: `
+    <h1>Candy Shaped Flower Shop</h1>
+    <p>
+      An <strong>e-commerce web application</strong> designed for selling 
+      <strong>candies, cookies, and snacks</strong> that are creatively 
+      shaped and arranged like <strong>flowers and bouquets</strong>. 
+      The platform allows customers to browse collections, view product 
+      details, and place online orders with ease.
+    </p>
+    <h2>Team Size</h2>
+    <p>1 (Personal Project)</p>
+    <h2>Technologies</h2>
+    <ul>
+      <li>Front-end: React.js + Tailwind CSS</li>
+      <li>Back-end: Node.js (Express)</li>
+      <li>Database: MongoDB</li>
+    </ul>
+    <h2>Key Features</h2>
+    <ul>
+      <li>🍬 Browse and search candy-flower products</li>
+      <li>🌸 View detailed product information with images</li>
+      <li>🛒 Add to cart and place orders</li>
+      <li>📦 Order management (customer side)</li>
+    </ul>
+    <h2>Author</h2>
+    <p>
+      👨‍💻 Tran Dinh Hieu (Wilson Tran) – Full Stack Developer
+    </p>
+    <h2>Links</h2>
+    <p>
+      <a href="https://github.com/dinhhieu110/flower_shop" target="_blank" rel="noopener noreferrer">
+        💻 GitHub Repository
+      </a>
+    </p>
+  `,
+    category: "Personal",
+    image: project_candy,
+    createdAt: "2025-06-26T10:00:00.000Z", // adjust date if needed
+    updatedAt: "2025-06-26T10:00:00.000Z",
+    __v: 0,
+    isPublished: true,
+  },
+  {
+    _id: "realtime-chat",
+    title: "Real-Time Chat Application",
+    subTitle: "Fullstack Real-Time Messenger with Video Calling",
+    description: `
+    <h1>Real-Time Chat Application</h1>
+    <p>
+      A <strong>full-stack real-time chat platform</strong> similar to Messenger, 
+      allowing users to <strong>chat instantly</strong> with friends, 
+      <strong>send media</strong>, and even make <strong>video calls</strong>. 
+      Built with the MERN stack and powered by <strong>Socket.IO</strong> for 
+      live interactions.
+    </p>
+    <h2>Team Size</h2>
+    <p>1 (Personal Project)</p>
+    <h2>Technologies</h2>
+    <ul>
+      <li>Front-end: React.js + Tailwind CSS</li>
+      <li>Back-end: Node.js (Express)</li>
+      <li>Database: MongoDB + Mongoose</li>
+      <li>Real-time: Socket.IO</li>
+      <li>Media: Cloudinary (file uploads)</li>
+    </ul>
+    <h2>Key Features</h2>
+    <ul>
+      <li>💬 Real-time private and group chat</li>
+      <li>📸 Media & file sharing with Cloudinary integration</li>
+      <li>🔐 Authentication & authorization with JWT + bcryptjs</li>
+      <li>📞 One-to-one video calling</li>
+      <li>🍪 Cookie-based session management</li>
+    </ul>
+    <h2>Packages</h2>
+    <p>
+      <code>express mongoose dotenv jsonwebtoken bcryptjs cookie-parser cloudinary socket.io</code>
+    </p>
+    <h2>Author</h2>
+    <p>
+      👨‍💻 Tran Dinh Hieu (Wilson Tran) – Full Stack Developer
+    </p>
+    <h2>Links</h2>
+    <p>
+      <a href="https://github.com/dinhhieu110/social_interaction_system" target="_blank" rel="noopener noreferrer">
+        💻 GitHub Repository
+      </a>
+    </p>
+  `,
+    category: "Personal",
+    image: project_chat,
+    createdAt: "2025-06-27T10:00:00.000Z",
+    updatedAt: "2025-06-27T10:00:00.000Z",
+    __v: 0,
+    isPublished: true,
+  },
+  {
+    _id: "bloomberg-trade",
+    title: "BloombergTrade System",
+    subTitle: "Stock Monitoring & Trading Statistics Platform",
+    description: `
+    <h1>BloombergTrade System</h1>
+    <p>
+      A <strong>modern web application</strong> that enables users to 
+      <strong>monitor, search, and analyze</strong> the stock performance 
+      of listed companies. The platform provides <strong>real-time insights</strong>, 
+      allows users to build a <strong>personalized watchlist</strong>, 
+      and includes <strong>admin tools</strong> for managing company data effectively.
+    </p>
+    <h2>Team Size</h2>
+    <p>1 (Personal Project)</p>
+    <h2>Technologies</h2>
+    <ul>
+      <li>Front-end: React.js (TypeScript) + Tailwind CSS</li>
+      <li>Back-end: ASP.NET Web API (.NET)</li>
+      <li>Database: SQL Server</li>
+      <li>Authentication: JWT</li>
+      <li>State Management: React Context API</li>
+    </ul>
+    <h2>Key Features</h2>
+    <ul>
+      <li>🔐 User authentication with role-based access control</li>
+      <li>📈 Real-time stock price updates</li>
+      <li>🔍 Search, filter, and sort companies by name, sector, or performance</li>
+      <li>⭐ Add or remove stocks from personal watchlist</li>
+      <li>📊 Company detail pages with historical performance charts</li>
+      <li>🛠 Scalable and secure backend API</li>
+    </ul>
+    <h2>Installation & Setup</h2>
+    <h3>Frontend</h3>
+    <ol>
+      <li>Clone the repository</li>
+      <li>Navigate to the <code>client</code> folder</li>
+      <li>Run <code>npm install</code></li>
+      <li>Create a <code>.env</code> file and configure your API base URL</li>
+      <li>Start the app with <code>npm run dev</code></li>
+    </ol>
+    <h3>Backend</h3>
+    <ol>
+      <li>Navigate to the <code>server</code> folder</li>
+      <li>Restore NuGet packages</li>
+      <li>Update <code>appsettings.json</code> with DB connection string and JWT settings</li>
+      <li>Run the project with Visual Studio or <code>dotnet run</code></li>
+    </ol>
+    <h2>Author</h2>
+    <p>
+      👨‍💻 Tran Dinh Hieu (Wilson Tran) – Full Stack Developer passionate about building secure, scalable systems.
+    </p>
+    <h2>Links</h2>
+    <p>
+      <a href="https://github.com/dinhhieu110/bloomberg_trade_system" target="_blank" rel="noopener noreferrer">
+        💻 GitHub Repository
+      </a>
+    </p>
+  `,
+    category: "Personal",
+    image: project_trade,
+    createdAt: "2025-06-28T10:00:00.000Z",
+    updatedAt: "2025-06-28T10:00:00.000Z",
+    __v: 0,
+    isPublished: true,
+  },
+];
+
 export const blog_data = [
   {
     _id: "6805ee7dd8f584af5da78d37",
@@ -87,7 +599,7 @@ export const blog_data = [
     _id: "6805ef08d8f584af5da78d39",
     title: "How to create an effective startup roadmap or ideas",
     description:
-      '<p>\tCreating an effective <strong>startup roadmap</strong> helps you turn an idea into a structured, actionable plan. It gives clarity on what to build, when to build it, and how to scale. Here\'s a short and practical guide to help you build your startup roadmap or refine your startup ideas:</p><h2>1. <strong>Start with the Problem, Not the Product</strong></h2><ol><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Identify a real, painful problem.</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Validate that it affects a significant audience.</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Ask: “Is this a must-have or just nice to have?”</li></ol><p><strong>Tip:</strong> Talk to real users, not just friends or family.</p><h2>2. <strong>Define Your Vision and Mission</strong></h2><ol><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Vision: Long-term impact you want to make.</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Mission: The approach or method to get there.</li></ol><p>This gives your roadmap a clear direction and purpose.</p><h2>3. <strong>Brainstorm and Filter Ideas</strong></h2><ol><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>List all possible solutions to the problem.</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Evaluate each based on:</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Feasibility</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Market demand</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Uniqueness</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Revenue potential</li></ol><p>Shortlist 1-2 core ideas to pursue initially.</p><h2>4. <strong>Define Your MVP (Minimum Viable Product)</strong></h2><ol><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Strip your idea down to the core functionality.</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Build only what\'s needed to solve the problem simply.</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Focus on value, not features.</li></ol><p><strong>Example:</strong> If you\'re building a job portal, start with user registration and job posting only.</p><h2>5. <strong>Set Milestones (Roadmap Stages)</strong></h2><p>Break your journey into clear phases:</p><ol><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span><strong>Phase 1: Research &amp; Validation</strong></li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Market research</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Competitor analysis</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>User interviews</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span><strong>Phase 2: MVP Development</strong></li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Build core product</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Internal testing</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span><strong>Phase 3: Launch &amp; Feedback</strong></li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Soft launch to early users</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Collect data, iterate</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span><strong>Phase 4: Growth &amp; Optimization</strong></li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Marketing</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Add features based on feedback</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Improve UI/UX</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span><strong>Phase 5: Scale</strong></li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Monetization</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Partnerships</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Hiring team</li></ol><h2>6. <strong>Use Tools for Planning and Tracking</strong></h2><ol><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Product roadmap tools: Trello, Notion, Jira, ClickUp</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Timeline tools: Gantt charts, Google Sheets, Miro</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Analytics: Mixpanel, Hotjar, GA4 for feedback loops</li></ol><h2>7. <strong>Keep It Flexible</strong></h2><p>A roadmap is a guide, not a rulebook. Be ready to pivot based on user feedback, market trends, or technical limitations.</p><h2>8. <strong>Revisit and Refine Regularly</strong></h2><p>Review your progress monthly or quarterly. Adjust priorities based on:</p><ol><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>User data</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Business metrics</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>New opportunities</li></ol><p><br></p>',
+      '<p>\tCreating an effective <strong>startup roadmap</strong> helps you turn an idea into a structured, actionable plan. It gives clarity on what to build, when to build it, and how to scale. Here\'s a short and practical guide to help you build your startup roadmap or refine your startup ideas:</p><h2>1. <strong>Start with the Problem, Not the Product</strong></h2><ol><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Identify a real, painful problem.</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Validate that it affects a significant audience.</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Ask: “Is this a must-have or just nice to have?”</li></ol><p><strong>Tip:</strong> Talk to real users, not just friends or family.</p><h2>2. <strong>Define Your Vision and Mission</strong></h2><ol><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Vision: Long-term impact you want to make.</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Mission: The approach or method to get there.</li></ol><p>This gives your roadmap a clear direction and purpose.</p><h2>3. <strong>Brainstorm and Filter Ideas</strong></h2><ol><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>List all possible solutions to the problem.</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Evaluate each based on:</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Feasibility</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Market demand</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Uniqueness</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Revenue potential</li></ol><p>Shortlist 1-2 core ideas to pursue initially.</p><h2>4. <strong>Define Your MVP (Minimum Viable Product)</strong></h2><ol><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Strip your idea down to the core functionality.</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Build only what\'s needed to solve the problem simply.</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Focus on value, not features.</li></ol><p><strong>Example:</strong> If you\'re building a job portal, start with user registration and job posting only.</p><h2>5. <strong>Set Milestones (Roadmap Stages)</strong></h2><p>Break your journey into clear phases:</p><ol><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span><strong>Phase 1: Research &amp; Validation</strong></li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Market research</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Competitor analysis</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>User interviews</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span><strong>Phase 2: MVP Development</strong></li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Build core product</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Internal testing</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span><strong>Phase 3: Launch &amp; Feedback</strong></li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Soft launch to early users</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Collect data, iterate</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span><strong>Phase 4: Growth &amp; Optimization</strong></li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Marketing</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Add features based on feedback</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Improve UI/UX</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span><strong>Phase 5: Scale</strong></li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Monetization</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Partnerships</li><li data-list="bullet" class="ql-indent-1"><span class="ql-ui" contenteditable="false"></span>Hiring Team</li></ol><h2>6. <strong>Use Tools for Planning and Tracking</strong></h2><ol><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Product roadmap tools: Trello, Notion, Jira, ClickUp</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Timeline tools: Gantt charts, Google Sheets, Miro</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Analytics: Mixpanel, Hotjar, GA4 for feedback loops</li></ol><h2>7. <strong>Keep It Flexible</strong></h2><p>A roadmap is a guide, not a rulebook. Be ready to pivot based on user feedback, market trends, or technical limitations.</p><h2>8. <strong>Revisit and Refine Regularly</strong></h2><p>Review your progress monthly or quarterly. Adjust priorities based on:</p><ol><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>User data</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Business metrics</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>New opportunities</li></ol><p><br></p>',
     category: "Startup",
     image: blog_pic_2,
     createdAt: "2025-04-21T07:08:56.214Z",
@@ -126,7 +638,7 @@ export const blog_data = [
     _id: "6805f307d8f584af5da78d3f",
     title: "Enhancing your skills and capturing memorable moments",
     description:
-      '<h1>Enhancing Your Skills and Capturing Memorable Moments</h1><p>In today\'s fast-paced world, personal growth and preserving memories go hand in hand. Here\'s how to do both meaningfully:</p><h2>1. <strong>Invest in Skill Building</strong></h2><ol><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Set clear learning goals</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Practice consistently through real projects</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Use online platforms like YouTube, Coursera, or freeCodeCamp</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Track progress to stay motivated</li></ol><h2>2. <strong>Capture Moments That Matter</strong></h2><ol><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Take photos/videos of milestones, both big and small</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Keep a digital or physical journal</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Use apps like Google Photos or Notion to organize memories</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Reflect regularly—it helps you appreciate the journey</li></ol><h2>3. <strong>Balance Growth and Presence</strong></h2><p>While chasing goals, don\'t forget to pause and enjoy the process. Learn, improve, and make time to document the moments that shape you.</p>',
+      '<h1>Enhancing Your Skills and Capturing Memorable Moments</h1><p>In today\'s fast-paced world, Personal growth and preserving memories go hand in hand. Here\'s how to do both meaningfully:</p><h2>1. <strong>Invest in Skill Building</strong></h2><ol><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Set clear learning goals</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Practice consistently through real projects</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Use online platforms like YouTube, Coursera, or freeCodeCamp</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Track progress to stay motivated</li></ol><h2>2. <strong>Capture Moments That Matter</strong></h2><ol><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Take photos/videos of milestones, both big and small</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Keep a digital or physical journal</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Use apps like Google Photos or Notion to organize memories</li><li data-list="bullet"><span class="ql-ui" contenteditable="false"></span>Reflect regularly—it helps you appreciate the journey</li></ol><h2>3. <strong>Balance Growth and Presence</strong></h2><p>While chasing goals, don\'t forget to pause and enjoy the process. Learn, improve, and make time to document the moments that shape you.</p>',
     category: "Lifestyle",
     image: blog_pic_5,
     createdAt: "2025-04-21T07:25:59.789Z",
@@ -165,7 +677,7 @@ export const blog_data = [
     _id: "6809f9f23e075dbeedd23bca",
     title: "The New Way of Study",
     description:
-      "<h2>The New Way of Study: Ditching the Old, Embracing the Now</h2><p>\n</p><p>For years, the image of studying has been synonymous with late nights, stacks of textbooks, and the constant pressure to memorize. But let's face it: that traditional approach is often ineffective, stressful, and frankly, outdated. In today's rapidly evolving world, the \"new way of study\" is less about rote memorization and more about <strong>understanding, application, and personalized learning.</strong></p><p>\n</p><p>So, what does this \"new way\" actually look like? Let's dive in:</p><p>\n</p><p><strong>1. Active Learning is King (and Queen!):</strong></p><p>\n</p><p>Forget passively rereading notes. The new way prioritizes actively engaging with the material. This means:</p><p>\n</p><p><br></p><p>\n</p><p><strong>2. Personalized Learning: Tailoring Your Approach:</strong></p><p>\n</p><p>One-size-fits-all doesn't work for learning. The new way encourages you to:</p><p>\n</p><p><br></p><p>\n</p><p><strong>3. Focus &amp; Mindfulness: Train Your Brain for Success:</strong></p><p>\n</p><p>Distraction is the enemy of effective learning. The new way emphasizes:</p><p>\n</p><p><br></p><p>\n</p><p><strong>4. Collaboration &amp; Community: Learning Together:</strong></p><p>\n</p><p>Learning doesn't have to be a solitary pursuit. The new way encourages:</p><p>\n</p><p><br></p><p>\n</p><p><strong>In Conclusion:</strong></p><p>\n</p><p>The \"new way of study\" is about embracing a more active, personalized, and holistic approach to learning. It's about understanding concepts, applying knowledge, and cultivating a lifelong love of learning. By ditching the outdated methods and embracing these new strategies, you can unlock your full potential and achieve academic success without the stress and burnout. So, are you ready to embrace the new way?</p><p>\n</p><p><strong>What are your favorite study techniques? Share them in the comments below!</strong></p><p>\n</p>",
+      "<h2>The New Way of Study: Ditching the Old, Embracing the Now</h2><p>\n</p><p>For years, the image of studying has been synonymous with late nights, stacks of textbooks, and the constant pressure to memorize. But let's face it: that traditional approach is often ineffective, stressful, and frankly, outdated. In today's rapidly evolving world, the \"new way of study\" is less about rote memorization and more about <strong>understanding, application, and Personalized learning.</strong></p><p>\n</p><p>So, what does this \"new way\" actually look like? Let's dive in:</p><p>\n</p><p><strong>1. Active Learning is King (and Queen!):</strong></p><p>\n</p><p>Forget passively rereading notes. The new way prioritizes actively engaging with the material. This means:</p><p>\n</p><p><br></p><p>\n</p><p><strong>2. Personalized Learning: Tailoring Your Approach:</strong></p><p>\n</p><p>One-size-fits-all doesn't work for learning. The new way encourages you to:</p><p>\n</p><p><br></p><p>\n</p><p><strong>3. Focus &amp; Mindfulness: Train Your Brain for Success:</strong></p><p>\n</p><p>Distraction is the enemy of effective learning. The new way emphasizes:</p><p>\n</p><p><br></p><p>\n</p><p><strong>4. Collaboration &amp; Community: Learning Together:</strong></p><p>\n</p><p>Learning doesn't have to be a solitary pursuit. The new way encourages:</p><p>\n</p><p><br></p><p>\n</p><p><strong>In Conclusion:</strong></p><p>\n</p><p>The \"new way of study\" is about embracing a more active, Personalized, and holistic approach to learning. It's about understanding concepts, applying knowledge, and cultivating a lifelong love of learning. By ditching the outdated methods and embracing these new strategies, you can unlock your full potential and achieve academic success without the stress and burnout. So, are you ready to embrace the new way?</p><p>\n</p><p><strong>What are your favorite study techniques? Share them in the comments below!</strong></p><p>\n</p>",
     category: "Finance",
     image: blog_pic_8,
     isPublished: true,
