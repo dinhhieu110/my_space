@@ -31,8 +31,12 @@ import dashboard_icon_2 from "./dashboard_icon_2.svg";
 import dashboard_icon_3 from "./dashboard_icon_3.svg";
 import dashboard_icon_4 from "./dashboard_icon_4.svg";
 import logo from "./h_letter.png";
+import avt from "./avt.jpg";
+import down from "./down.png";
 
 export const assets = {
+  down,
+  avt,
   facebook_icon,
   googleplus_icon,
   twitter_icon,

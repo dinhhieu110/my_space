@@ -6,7 +6,7 @@ import { Outlet, useNavigate } from "react-router-dom";
 const Layout = () => {
   const navigate = useNavigate();
   const logout = () => {
-    navigate("/admin");
+    navigate("/");
   };
   return (
     <>

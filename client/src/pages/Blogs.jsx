@@ -1,6 +1,5 @@
-import Navbar from "../components/layout/Navbar";
-import Hero from "../components/common/Hero";
-import BlogList from "../components/common/BlogList";
+import BlogList from "../components/blogs/BlogList";
+import Hero from "../components/blogs/Hero";
 import NewsLetter from "../components/common/NewsLetter";
 import Footer from "../components/layout/Footer";
 

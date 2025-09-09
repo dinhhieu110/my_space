@@ -1,8 +1,8 @@
 import React from "react";
 import { blog_data, blogCategories } from "../../assets/assets";
 import clsx from "clsx";
-import { motion } from "motion/react";
 import BlogCard from "./BlogCard";
+import { motion } from "motion/react";
 
 const BlogList = () => {
   const [selectedCategory, setSelectedCategory] = React.useState("All");
