@@ -6,7 +6,6 @@ import Footer from "../components/layout/Footer";
 const Me = () => {
   return (
     <>
-      <Navbar />
       <Hero />
       <BlogList />
       <NewsLetter />

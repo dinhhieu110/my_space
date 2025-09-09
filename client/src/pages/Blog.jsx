@@ -37,7 +37,6 @@ const Blog = () => {
 
   return data ? (
     <div className="relative">
-      <Navbar />
       <img
         src={assets.gradientBackground}
         alt="background"
