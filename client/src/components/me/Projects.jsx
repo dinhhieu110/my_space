@@ -8,7 +8,7 @@ const Projects = () => {
   const [selectedCategory, setSelectedCategory] = React.useState("Enterprise");
 
   return (
-    <div id="projects">
+    <div id="projects" className="mt-16 pt-4">
       <div className="flex justify-center gap-4 sm:gap-8 mb-10 relative">
         {projectCategories.map((category) => {
           return (

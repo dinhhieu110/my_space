@@ -44,6 +44,7 @@ import project_candy from "./project_candy.png";
 import project_doctor from "./project_doctor.png";
 import project_chat from "./project_chat.png";
 import project_trade from "./project_trade.png";
+import project_new from "./project_new.jpg";
 
 export const assets = {
   down,
@@ -97,6 +98,15 @@ export const project_data = [
       </p>
       <h2>Team Size</h2>
       <p>20 members (7 front-end, 5 back-end, BAs and QAs)</p>
+      <h2>Key Features</h2>
+      <ul>
+        <li>Comprehensive <strong>project management</strong> system for tracking maritime and port-related initiatives</li>
+        <li>Centralized <strong>contract management</strong> under each project with approval workflows</li>
+        <li>Support for <strong>vessel traffic, navigational safety, and port service regulation</strong></li>
+        <li>Role-based dashboards for <strong>administrators, contractors, and port officials</strong></li>
+        <li>Document handling and digital records for compliance and auditing</li>
+        <li>Seamless integration with <strong>backend services</strong> to ensure operational efficiency and environmental compliance</li>
+      </ul>
       <h2>Technologies</h2>
       <ul>
         <li>Front-end: React + TypeScript + Fluent UI + SASS</li>
@@ -165,6 +175,15 @@ export const project_data = [
         on-premise, cloud, and SaaS environments to streamline security processes and 
         improve operational efficiency.
       </p>
+      <h2>Key Features</h2>
+      <ul>
+        <li>Centralized <strong>log management</strong> from on-premise, cloud, and SaaS environments</li>
+        <li>Interactive <strong>log viewer</strong> with advanced filtering, table views, and detailed inspection</li>
+        <li>Automated <strong>file scanning</strong> for viruses, malware, and malicious patterns</li>
+        <li>Comprehensive <strong>policy management</strong> – create, modify, and enforce security policies in real time</li>
+        <li>Integration with security workflows for <strong>incident detection and response</strong></li>
+        <li>Responsive dashboards for monitoring security events and system health</li>
+      </ul>
       <h2>Team Size</h2>
       <p>5 members (3 front-end, 2 QCs)</p>
       <h2>Technologies</h2>
@@ -216,9 +235,56 @@ export const project_data = [
       <li>React + Typescript + Tailwind CSS</li>
       <li>Node.js (Express.js) + PostgreSQL</li>
     </ul>
+    <h2>Key Responsibilities</h2>
+    <ul>
+        <li>Built the codebase from scratch and established project structure and best practices.</li>
+        <li>Communicated directly with Korean clients to clarify requirements and provide updates.</li>
+        <li>Assigned, tracked, and managed tasks for Team members to ensure on-time delivery.</li>
+        <li>Developed responsive UIs, integrated APIs, and implemented core features across multiple modules/pages.</li>
+    </ul>
   `,
     category: "Enterprise",
     image: sirloin,
+    createdAt: "2025-07-01T10:00:00.000Z",
+    updatedAt: "2025-07-01T10:00:00.000Z",
+    __v: 0,
+    isPublished: true,
+  },
+  {
+    _id: "upcoming",
+    title: "... | @Sotatek",
+    subTitle: "Order & Warehouse Management System",
+    description: `
+    <h1>...</h1>
+    <p>
+      ...
+    </p>
+    <h2>Key Features</h2>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <h2>Team Size</h2>
+    <p>... members (... front-end, ... back-end)</p>
+    <h2>Role</h2>
+    <p>Front-end Developer</p>
+    <h2>Technologies</h2>
+    <ul>
+      <li>...</li>
+      <li>...</li>
+    </ul>
+    <h2>Key Responsibilities</h2>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  `,
+    category: "Enterprise",
+    image: project_new,
     createdAt: "2025-07-01T10:00:00.000Z",
     updatedAt: "2025-07-01T10:00:00.000Z",
     __v: 0,
@@ -236,6 +302,14 @@ export const project_data = [
         The platform enables influencer discovery, campaign creation, and provides 
         <strong>AI-powered interaction insights</strong> to optimize marketing outcomes.
       </p>
+      <h2>Key Features</h2>
+      <ul>
+        <li><strong>Influencer discovery</strong> – search and filter KOLs/KOCs by category, reach, and engagement</li>
+        <li><strong>Campaign creation & management</strong> – brands can launch, monitor, and manage influencer campaigns</li>
+        <li><strong>AI-powered insights</strong> – analyze influencer performance, engagement quality, and audience interaction</li>
+        <li><strong>Collaboration tools</strong> – streamline communication between brands and influencers</li>
+        <li><strong>Analytics dashboard</strong> – real-time campaign performance tracking and reporting</li>
+      </ul>
       <h2>Team Size</h2>
       <p>5 members (2 front-end, 3 back-end)</p>
       <h2>Technologies</h2>
@@ -276,19 +350,19 @@ export const project_data = [
       The platform also provides an <strong>admin dashboard</strong> for managing 
       movies, seats, promotions, and concession items.
     </p>
-    <h2>Team Size</h2>
-    <p>Group project (university Team collaboration)</p>
-    <h2>Technologies</h2>
-    <ul>
-      <li>Front-end: Next.js + ShadCN UI + Tailwind CSS</li>
-      <li>Back-end: Node.js + Express</li>
-    </ul>
     <h2>Key Features</h2>
     <ul>
       <li>🎬 Movie browsing & searching</li>
       <li>🪑 Seat booking with real-time availability</li>
       <li>🍿 Food, drinks, and combo ordering</li>
       <li>🛠 Admin dashboard for managing seats, movies, and promotions</li>
+    </ul>
+    <h2>Team Size</h2>
+    <p>Group project (university Team collaboration)</p>
+    <h2>Technologies</h2>
+    <ul>
+      <li>Front-end: Next.js + ShadCN UI + Tailwind CSS</li>
+      <li>Back-end: Node.js + Express</li>
     </ul>
     <h2>Links</h2>
     <p>
@@ -315,14 +389,6 @@ export const project_data = [
       such as <strong>diamonds, gold, and watches</strong>. Customers can easily browse, 
       search, and purchase jewelry with just one click.
     </p>
-    <h2>Team Size</h2>
-    <p>3 Members – University Team Project (Team Collaboration)</p>
-    <h2>Technologies</h2>
-    <ul>
-      <li>Front-end: JSP + Bootstrap</li>
-      <li>Back-end: Servlet</li>
-      <li>Database: PostgreSQL</li>
-    </ul>
     <h2>Key Features</h2>
     <ul>
       <li>✅ User authentication (customers, users, admin)</li>
@@ -330,6 +396,14 @@ export const project_data = [
       <li>✅ Track new products and store news</li>
       <li>✅ Place orders for products</li>
       <li>✅ Admin dashboard for managing users, products, and analytics</li>
+    </ul>
+    <h2>Team Size</h2>
+    <p>3 Members – University Team Project (Team Collaboration)</p>
+    <h2>Technologies</h2>
+    <ul>
+      <li>Front-end: JSP + Bootstrap</li>
+      <li>Back-end: Servlet</li>
+      <li>Database: PostgreSQL</li>
     </ul>
     <h2>Authors</h2>
     <p>
@@ -345,7 +419,46 @@ export const project_data = [
     __v: 0,
     isPublished: true,
   },
-
+  {
+    _id: "upcoming",
+    title: "...",
+    subTitle: "Order & Warehouse Management System",
+    description: `
+    <h1>...</h1>
+    <p>
+      ...
+    </p>
+    <h2>Key Features</h2>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <h2>Team Size</h2>
+    <p>... members (... front-end, ... back-end)</p>
+    <h2>Role</h2>
+    <p>Front-end Developer</p>
+    <h2>Technologies</h2>
+    <ul>
+      <li>...</li>
+      <li>...</li>
+    </ul>
+    <h2>Key Responsibilities</h2>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  `,
+    category: "Team",
+    image: project_new,
+    createdAt: "2025-07-01T10:00:00.000Z",
+    updatedAt: "2025-07-01T10:00:00.000Z",
+    __v: 0,
+    isPublished: true,
+  },
   {
     _id: "medbook",
     title: "MedBook",
@@ -357,8 +470,15 @@ export const project_data = [
       Patients can easily <strong>book appointments with doctors</strong> based on availability, 
       while doctors can efficiently <strong>manage their schedules</strong>.
     </p>
+    <h2>Key Features</h2>
+    <ul>
+      <li><strong>Patient appointment booking</strong> – schedule medical visits based on doctor availability</li>
+      <li><strong>Doctor schedule management</strong> – doctors can view, update, and organize their schedules</li>
+      <li><strong>User authentication</strong> – secure login for patients and doctors</li>
+      <li><strong>Responsive design</strong> – optimized for both desktop and mobile use</li>
+    </ul>
     <h2>Team Size</h2>
-    <p>1 (Personal Project)</p>
+    1 (Personal Project)
     <h2>Role</h2>
     <p>Full Stack Developer</p>
     <h2>Technologies</h2>
@@ -393,6 +513,14 @@ export const project_data = [
       The system leverages <strong>Google Gemini</strong> and <strong>Vapi</strong> 
       to deliver realistic interview scenarios.
     </p>
+    <h2>Key Features</h2>
+    <ul>
+      <li><strong>AI-powered interview simulation</strong> – practice with realistic job interview scenarios</li>
+      <li><strong>Voice-based conversations</strong> – interact naturally with the system using speech</li>
+      <li><strong>Google Gemini integration</strong> – generate dynamic and intelligent interview questions</li>
+      <li><strong>Vapi integration</strong> – handle real-time voice interactions smoothly</li>
+      <li><strong>User-friendly interface</strong> – clean and responsive UI for seamless practice sessions</li>
+    </ul>
     <h2>Team Size</h2>
     <p>1 (Personal Project)</p>
     <h2>Technologies</h2>

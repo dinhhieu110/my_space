@@ -19,11 +19,11 @@ export default function Intro() {
   return (
     <div
       id="intro"
-      className="flex flex-col bg-white text-center xl:flex-row xl:text-left xl:justify-center my-20 mx-8 sm:mx-20 xl:mx-32"
+      className="flex flex-col bg-white text-center xl:flex-row xl:text-left xl:justify-center mt-16 mx-8 sm:mx-20 xl:mx-32"
     >
       {/* Left */}
       <div className="flex-1 overflow-hidden flex justify-center items-center">
-        <div className="h-[420px] w-[400px] xl:h-[620px] xl:w-[600px] bg-primary rounded-full flex justify-center items-end overflow-hidden ">
+        <div className="h-[420px] w-[400px] xl:h-[520px] xl:w-[500px] bg-primary rounded-full flex justify-center items-end overflow-hidden ">
           <img src={assets.avt} alt="avatar.png" className="h-full" />
         </div>
       </div>
@@ -33,10 +33,10 @@ export default function Intro() {
         <div className="flex flex-col justify-center w-full h-full px-0 md:pl-12">
           <h2 className="text-[30px] md:text-[35px]">Hi there, I'm</h2>
           <h1 className="text-[30px] md:text-[50px] font-bold my-2">
-            Tran Dinh Hieu (Wilson Tran)
+            Tran Dinh Hieu
           </h1>
           <h3 className="text-[20px] md:text-[30px]">
-            A <span ref={textRef} className="text-primary font-bold" /> Software
+            A <span ref={textRef} className="text-primary font-bold" />{" "}
             Developer
           </h3>
           <h3 className="text-[20px] md:text-[30px]">
@@ -46,7 +46,7 @@ export default function Intro() {
 
         <a
           href="#projects"
-          className="absolute bottom-2 left-1/2 -translate-x-1/2 md:left-[40%] md:translate-x-0"
+          className="hidden xl:block absolute bottom-2 left-1/2 -translate-x-1/2 md:left-[40%] md:translate-x-0"
         >
           <img
             src={assets.down}

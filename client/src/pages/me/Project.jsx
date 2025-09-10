@@ -37,7 +37,7 @@ const Project = () => {
           Tran Dinh Hieu
         </p>
       </div>
-      <div className="mx-5 max-w-5xl md:mx-auto my-10 mt-6">
+      <div className="mx-5 max-w-lg md:mx-auto my-10 mt-6">
         <div className="flex items-center justify-center w-full shadow rounded-3xl">
           <img
             src={data.image}
