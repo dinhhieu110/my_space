@@ -112,7 +112,6 @@ export const deleteBLogById = async (req, res) => {
 };
 
 export const togglePublishBlogById = async (req, res) => {
-  console.log("hello");
   try {
     const blog = await Blog.findById(req.body.id);
     if (!blog) {
@@ -126,6 +125,45 @@ export const togglePublishBlogById = async (req, res) => {
     return res
       .status(200)
       .json({ message: "Blog publish status toggled", success: true });
+  } catch (error) {
+    return res.status(500).json({
+      message: error.message,
+      success: false,
+    });
+  }
+};
+
+export const addComment = async (req, res) => {
+  try {
+    const { blogId, author, content } = req.body;
+    if (blogId && author && content) {
+      await Comment.create({ blogId, author, content });
+      return res
+        .status(200)
+        .json({ message: "Comment added for review", success: true });
+    } else {
+      return res
+        .status(400)
+        .json({ message: "All fields are required", success: false });
+    }
+  } catch (error) {
+    return res.status(500).json({ message: error.message, success: false });
+  }
+};
+
+export const getBlogComments = async (req, res) => {
+  try {
+    const comments = await Comment.find({
+      blogId: req.params.id,
+      isApproved: true,
+    }).sort({
+      createdAt: -1,
+    });
+    return res.status(200).json({
+      message: "Get blog comments successfully",
+      success: true,
+      data: comments,
+    });
   } catch (error) {
     return res.status(500).json({
       message: error.message,
