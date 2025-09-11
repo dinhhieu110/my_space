@@ -1,12 +1,38 @@
 import { useState } from "react";
+import { useGlobalState } from "../../contexts/AppContext";
+import toast from "react-hot-toast";
+import { RoutePath } from "../../utils/enums";
 
 const Login = () => {
-  const [loginForm, setLoginForm] = useState({});
+  const INIT_FORM = {
+    email: "",
+    password: "",
+  };
+  const { axios, setToken, navigate } = useGlobalState();
+
+  const [loginForm, setLoginForm] = useState(INIT_FORM);
   const handleLoginFormChange = (e) => {
     const { name, value } = e.target;
     setLoginForm((prev) => ({ ...prev, [name]: value }));
   };
-  const handleLogin = () => {};
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await axios.post("/api/admin/login", loginForm);
+      if (data?.success) {
+        setToken(data.token);
+        setLoginForm(INIT_FORM);
+        toast.success("Login successful");
+        localStorage.setItem("token", data.token);
+        axios.defaults.headers.common["Authorization"] = `Bearer ${data.token}`;
+        navigate(RoutePath.AdminBase);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
   return (
     <div className="flex items-center justify-center h-screen">
       <div className="w-full max-w-sm p-6 max-md:m-6 border border-primary/30 shadow-xl shadow-primary/15 rounded-lg">
@@ -16,7 +42,7 @@ const Login = () => {
               <span className="text-primary">Owner</span> Login
             </h1>
             <p className="font-light">
-              Enter your credentials to access the admin panel
+              Enter credentials to access the admin panel
             </p>
           </div>
           <form

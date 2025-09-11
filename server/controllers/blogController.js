@@ -61,7 +61,7 @@ export const getAllBlogs = async (req, res) => {
     return res.status(200).json({
       message: "Get all blogs successfully",
       success: true,
-      data: blogs,
+      blogs: blogs,
     });
   } catch (error) {
     return handleError(res, error);
@@ -80,7 +80,7 @@ export const getBlogById = async (req, res) => {
     return res.status(200).json({
       message: "Get a specific blog successfully",
       success: true,
-      data: blog,
+      blog: blog,
     });
   } catch (error) {
     return handleError(res, error);
@@ -155,7 +155,7 @@ export const getBlogComments = async (req, res) => {
     return res.status(200).json({
       message: "Get blog comments successfully",
       success: true,
-      data: comments,
+      comments: comments,
     });
   } catch (error) {
     return handleError(res, error);

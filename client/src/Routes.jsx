@@ -13,9 +13,10 @@ import {
 } from "./pages";
 import { Route, Routes } from "react-router-dom";
 import { Fragment } from "react";
+import { useGlobalState } from "./contexts/AppContext";
 
 const AppRoutes = () => {
-  const isLoggedIn = true;
+  const { token } = useGlobalState();
 
   return (
     <Routes>
@@ -26,7 +27,7 @@ const AppRoutes = () => {
       <Fragment key="Admin">
         <Route
           path={RoutePath.AdminBase}
-          element={isLoggedIn ? <Layout /> : <Login />}
+          element={token ? <Layout /> : <Login />}
         >
           <Route index element={<Dashboard />} />
           <Route path={RoutePath.AdminAddBlog} element={<AddBlog />} />

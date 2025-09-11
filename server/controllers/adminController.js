@@ -31,7 +31,7 @@ export const getAllAdminBlogs = async (req, res) => {
     return res.status(200).json({
       message: "Get all blogs successfully",
       success: true,
-      data: blogs,
+      blogs: blogs,
     });
   } catch (error) {
     return handleError(res, error);
@@ -46,7 +46,7 @@ export const getAllAdminComments = async (req, res) => {
     return res.status(200).json({
       message: "Get all comments successfully",
       success: true,
-      data: comments,
+      comments: comments,
     });
   } catch (error) {
     return handleError(res, error);

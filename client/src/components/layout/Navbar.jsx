@@ -2,12 +2,18 @@ import React from "react";
 import { assets } from "../../assets/assets";
 import { useLocation, useNavigate } from "react-router-dom";
 import { RoutePath } from "../../utils/enums";
-import { FaBookReader, FaInfoCircle, FaSignInAlt } from "react-icons/fa";
+import {
+  FaBookReader,
+  FaChartArea,
+  FaInfoCircle,
+  FaSignInAlt,
+} from "react-icons/fa";
+import { useGlobalState } from "../../contexts/AppContext";
 
 const Navbar = () => {
-  const navigate = useNavigate();
   const location = useLocation();
   const path = location.pathname;
+  const { navigate, token } = useGlobalState();
 
   return (
     <div className="border-b border-gray-200">
@@ -41,8 +47,8 @@ const Navbar = () => {
             onClick={() => navigate(RoutePath.AdminBase)}
             className="flex items-center justify-around gap-2 rounded-full text-sm hover:scale-105 transition-all cursor-pointer bg-black text-white px-10 py-2.5 min-w-[150px]"
           >
-            Login
-            <FaSignInAlt />
+            {token ? "Dashboard" : "Login"}
+            {token ? <FaChartArea /> : <FaSignInAlt />}
           </button>
         </div>
       </nav>
