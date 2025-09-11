@@ -41,7 +41,7 @@ export const addBlog = async (req, res) => {
       });
 
       return res.status(200).json({
-        message: "Add new blog successfully",
+        message: "Blog added successfully",
         success: true,
       });
     } else {
@@ -82,6 +82,50 @@ export const getBlogById = async (req, res) => {
       success: true,
       data: blog,
     });
+  } catch (error) {
+    return res.status(500).json({
+      message: error.message,
+      success: false,
+    });
+  }
+};
+
+export const deleteBLogById = async (req, res) => {
+  try {
+    const blog = await Blog.findByIdAndDelete(req.params.id);
+    if (!blog) {
+      return res.status(404).json({
+        message: "Blog not found",
+        success: false,
+      });
+    }
+    return res.status(200).json({
+      message: "Blog deleted successfully",
+      success: true,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: error.message,
+      success: false,
+    });
+  }
+};
+
+export const togglePublishBlogById = async (req, res) => {
+  console.log("hello");
+  try {
+    const blog = await Blog.findById(req.body.id);
+    if (!blog) {
+      return res.status(404).json({
+        message: "Blog not found",
+        success: false,
+      });
+    }
+    blog.isPublished = !blog.isPublished;
+    await blog.save();
+    return res
+      .status(200)
+      .json({ message: "Blog publish status toggled", success: true });
   } catch (error) {
     return res.status(500).json({
       message: error.message,
