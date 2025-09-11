@@ -1,11 +1,26 @@
 import React from "react";
-import { blog_data, blogCategories } from "../../assets/assets";
+import { blogCategories } from "../../assets/assets";
 import clsx from "clsx";
 import BlogCard from "./BlogCard";
 import { motion } from "motion/react";
+import { useGlobalState } from "../../contexts/AppContext";
+import { useMemo } from "react";
 
 const BlogList = () => {
   const [selectedCategory, setSelectedCategory] = React.useState("All");
+  const { blogs, fetchBlogs, filter } = useGlobalState();
+  const filteredBlogs = useMemo(() => {
+    if (!filter) return blogs;
+    return blogs.filter(
+      (blog) =>
+        blog.title.toLowerCase().includes(filter.toLowerCase()) ||
+        blog.category.toLowerCase().includes(filter.toLowerCase())
+    );
+  }, [filter, blogs]);
+
+  React.useEffect(() => {
+    fetchBlogs();
+  }, []);
 
   return (
     <div>
@@ -35,7 +50,7 @@ const BlogList = () => {
         })}
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 mb-24 mx-8 sm:mx-16 xl:mx-40">
-        {blog_data
+        {(filteredBlogs || [])
           .filter((blog) =>
             selectedCategory === "All"
               ? true
