@@ -47,7 +47,9 @@ export const addBlog = async (req, res) => {
     } else {
       return res.status(401).json({ message: error.message, success: false });
     }
-  } catch (error) {}
+  } catch (error) {
+    return handleError(res, error);
+  }
 };
 
 export const getAllBlogs = async (req, res) => {
@@ -61,10 +63,7 @@ export const getAllBlogs = async (req, res) => {
       data: blogs,
     });
   } catch (error) {
-    return res.status(500).json({
-      message: error.message,
-      success: false,
-    });
+    return handleError(res, error);
   }
 };
 
@@ -83,10 +82,7 @@ export const getBlogById = async (req, res) => {
       data: blog,
     });
   } catch (error) {
-    return res.status(500).json({
-      message: error.message,
-      success: false,
-    });
+    return handleError(res, error);
   }
 };
 
@@ -104,10 +100,7 @@ export const deleteBLogById = async (req, res) => {
       success: true,
     });
   } catch (error) {
-    return res.status(500).json({
-      message: error.message,
-      success: false,
-    });
+    return handleError(res, error);
   }
 };
 
@@ -126,10 +119,7 @@ export const togglePublishBlogById = async (req, res) => {
       .status(200)
       .json({ message: "Blog publish status toggled", success: true });
   } catch (error) {
-    return res.status(500).json({
-      message: error.message,
-      success: false,
-    });
+    return handleError(res, error);
   }
 };
 
@@ -147,7 +137,7 @@ export const addComment = async (req, res) => {
         .json({ message: "All fields are required", success: false });
     }
   } catch (error) {
-    return res.status(500).json({ message: error.message, success: false });
+    return handleError(res, error);
   }
 };
 
@@ -165,9 +155,6 @@ export const getBlogComments = async (req, res) => {
       data: comments,
     });
   } catch (error) {
-    return res.status(500).json({
-      message: error.message,
-      success: false,
-    });
+    return handleError(res, error);
   }
 };
