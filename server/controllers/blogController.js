@@ -1,6 +1,7 @@
 import fs from "fs";
 import imagekit from "../configs/imageKit.js";
 import Blog from "../models/Blog.js";
+import Comment from "../models/Comment.js";
 
 export const addBlog = async (req, res) => {
   try {
@@ -89,6 +90,8 @@ export const getBlogById = async (req, res) => {
 export const deleteBLogById = async (req, res) => {
   try {
     const blog = await Blog.findByIdAndDelete(req.params.id);
+    // Delete all comments associated with the blog
+    await Comment.deleteMany({ blogId: req.params.id });
     if (!blog) {
       return res.status(404).json({
         message: "Blog not found",
@@ -106,7 +109,7 @@ export const deleteBLogById = async (req, res) => {
 
 export const togglePublishBlogById = async (req, res) => {
   try {
-    const blog = await Blog.findById(req.body.id);
+    const blog = await Blog.findById(req.params.id);
     if (!blog) {
       return res.status(404).json({
         message: "Blog not found",

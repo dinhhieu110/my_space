@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken";
 import Blog from "../models/Blog.js";
+import Comment from "../models/Comment.js";
 import { handleError } from "../helpers/errorHandler.js";
 export const adminLogin = async (req, res) => {
   try {
@@ -67,6 +68,44 @@ export const getDashboard = async (req, res) => {
         totalComments,
         draftBlogs,
       },
+    });
+  } catch (error) {
+    return handleError(res, error);
+  }
+};
+
+export const deleteCommentById = async (req, res) => {
+  try {
+    const comment = await Comment.findByIdAndDelete(req.params.id);
+    if (!comment) {
+      return res.status(404).json({
+        message: "Comment not found",
+        success: false,
+      });
+    }
+    return res.status(200).json({
+      message: "Comment deleted successfully",
+      success: true,
+    });
+  } catch (error) {
+    return handleError(res, error);
+  }
+};
+
+export const approveCommentById = async (req, res) => {
+  try {
+    const comment = await Comment.findById(req.params.id);
+    if (!comment) {
+      return res.status(404).json({
+        message: "Comment not found",
+        success: false,
+      });
+    }
+    comment.isApproved = true;
+    await comment.save();
+    return res.status(200).json({
+      message: "Comment approved successfully",
+      success: true,
     });
   } catch (error) {
     return handleError(res, error);

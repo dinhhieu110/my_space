@@ -15,7 +15,7 @@ const blogRouter = express.Router();
 
 blogRouter.post("/add", upload.single("image"), auth, addBlog);
 blogRouter.get("/all", getAllBlogs);
-blogRouter.post("/publish", auth, togglePublishBlogById);
+blogRouter.patch("/:id/publish", auth, togglePublishBlogById);
 blogRouter.get("/:id", getBlogById);
 blogRouter.delete("/:id", auth, deleteBLogById);
 blogRouter.post("/comment", addComment);
