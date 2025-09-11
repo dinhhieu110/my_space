@@ -4,16 +4,25 @@ import { assets, blog_data, comments_data } from "../../assets/assets";
 import Moment from "moment";
 import Footer from "../../components/layout/Footer";
 import Loader from "../../components/common/Loader";
+import { useGlobalState } from "../../contexts/AppContext";
+import toast from "react-hot-toast";
 
 const Blog = () => {
   const { id } = useParams();
-  const [data, setData] = useState(null);
+  const [blog, setBlog] = useState(null);
   const [comments, setComments] = useState([]);
   const [commentForm, setCommentForm] = useState(null);
+  const { axios } = useGlobalState();
 
   const fetchBlogDetails = async () => {
-    const result = await blog_data.find((blog) => blog._id === id);
-    setData(result);
+    try {
+      const result = await axios.get(`/blogs/${id}`);
+      result.data.success
+        ? setBlog(result.data.blog)
+        : toast.error(result.data.message);
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   const handleCommentFormChange = (e) => {
@@ -23,10 +32,29 @@ const Blog = () => {
 
   const addComment = async (e) => {
     e.preventDefault();
+    try {
+      const { data } = await axios.post("/blogs/add-comment", {
+        ...commentForm,
+        blogId: id,
+      });
+      if (data.success) {
+        toast.success(data.message);
+        setCommentForm({ author: "", content: "" });
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   const fetchComments = async () => {
-    setComments(comments_data);
+    try {
+      const { data } = await axios.get(`/blogs/${id}/comments/}`);
+      data.success ? setComments(data.comments) : toast.error(data.message);
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   useEffect(() => {
@@ -34,7 +62,7 @@ const Blog = () => {
     fetchComments();
   }, []);
 
-  return data ? (
+  return blog ? (
     <div className="relative">
       <img
         src={assets.gradientBackground}
@@ -43,21 +71,27 @@ const Blog = () => {
       />
       <div className="text-center mt-20 text-gray-600">
         <p className="text-primary py-4 font-medium">
-          Published on {Moment(data.createdAt).format("MMMM Do YYYY")}
+          Published on {Moment(blog.createdAt).format("MMMM Do YYYY")}
         </p>
         <h1 className="text-2xl sm:text-5xl font-semibold max-w-2xl mx-auto text-gray-800">
-          {data.title}
+          {blog.title}
         </h1>
-        <h2 className="my-5 max-w-lg truncate mx-auto">{data.subTitle}</h2>
+        <h2 className="my-5 max-w-lg truncate mx-auto">{blog.subTitle}</h2>
         <p className="inline-block py-1 px-4 rounded-full mb-6 border text-sm border-primary/35 bg-primary/5 font-medium text-primary">
-          Wilson Tran
+          Tran Dinh Hieu
         </p>
       </div>
-      <div className="mx-5 max-w-5xl md:mx-auto my-10 mt-6">
-        <img src={data.image} alt="thumbnail" className="rounded-3xl mb-5" />
+      <div className="mx-5 max-w-lg md:mx-auto my-10 mt-6">
+        <div className="flex items-center justify-center w-full shadow rounded-3xl">
+          <img
+            src={blog.image}
+            alt="thumbnail"
+            className="rounded-3xl aspect-video object-cover w-full"
+          />
+        </div>
         <div
           className="rich-text max-w-3xl mx-auto"
-          dangerouslySetInnerHTML={{ __html: data.description }}
+          dangerouslySetInnerHTML={{ __html: blog.description }}
         ></div>
         {/* Comments section */}
         <div className="mt-14 mb-10 max-w-3xl mx-auto">
@@ -90,7 +124,7 @@ const Blog = () => {
           >
             <input
               type="text"
-              name="name"
+              name="author"
               value={commentForm?.name}
               placeholder="Name"
               required
