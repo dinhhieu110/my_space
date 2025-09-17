@@ -27,7 +27,19 @@ const BlogTableItem = ({ blog, fetchBlogs, index }) => {
     }
   };
 
-  const deleteBlog = async () => {};
+  const deleteBlog = async () => {
+    try {
+      const { data } = await axios.delete(`/blogs/${blog._id}`);
+      if (data.success) {
+        toast.success(`Blog deleted  successfully!`);
+        fetchBlogs();
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
 
   return (
     <tr className="border-y border-gray-300">
@@ -50,10 +62,12 @@ const BlogTableItem = ({ blog, fetchBlogs, index }) => {
         >
           {blog.isPublished ? "Unpublished" : "Published"}
         </button>
-        <img
-          src={assets.cross_icon}
-          className="w-8 hover: scale-110 transition-all cursor-pointer"
-        />
+        <div onClick={deleteBlog}>
+          <img
+            src={assets.cross_icon}
+            className="w-8 hover: scale-110 transition-all cursor-pointer"
+          />
+        </div>
       </td>
     </tr>
   );
