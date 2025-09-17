@@ -13,7 +13,6 @@ const Blog = () => {
   const [comments, setComments] = useState([]);
   const [commentForm, setCommentForm] = useState(null);
   const { axios } = useGlobalState();
-
   const fetchBlogDetails = async () => {
     try {
       const result = await axios.get(`/blogs/${id}`);
@@ -32,6 +31,7 @@ const Blog = () => {
 
   const addComment = async (e) => {
     e.preventDefault();
+    console.log("commentForm:", commentForm);
     try {
       const { data } = await axios.post("/blogs/add-comment", {
         ...commentForm,
@@ -125,7 +125,7 @@ const Blog = () => {
             <input
               type="text"
               name="author"
-              value={commentForm?.name}
+              value={commentForm?.author}
               placeholder="Name"
               required
               className="w-full p-2 border border-gray-300 rounded outline-none"

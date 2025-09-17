@@ -1,9 +1,33 @@
 import React from "react";
 import { assets } from "../../assets/assets";
+import { useGlobalState } from "../../contexts/AppContext";
+import toast from "react-hot-toast";
 
 const BlogTableItem = ({ blog, fetchBlogs, index }) => {
   const { title, createdAt } = blog;
   const blogDate = new Date(createdAt);
+
+  const { axios } = useGlobalState();
+
+  const togglePublishBlog = async () => {
+    try {
+      const { data } = await axios.patch(`/blogs/${blog._id}/toggle-publish`);
+      if (data.success) {
+        toast.success(
+          `Blog ${
+            blog.isPublished ? "unPublished" : "published"
+          }  successfully!`
+        );
+        fetchBlogs();
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
+  const deleteBlog = async () => {};
 
   return (
     <tr className="border-y border-gray-300">
@@ -20,7 +44,10 @@ const BlogTableItem = ({ blog, fetchBlogs, index }) => {
         </p>
       </td>
       <td className="px-2 py-4 flex text-xs gap-3">
-        <button className="border px-2 py-0.5 mt-1 rounded cursor-pointer">
+        <button
+          onClick={togglePublishBlog}
+          className="border px-2 py-0.5 mt-1 rounded cursor-pointer min-w-[100px]"
+        >
           {blog.isPublished ? "Unpublished" : "Published"}
         </button>
         <img

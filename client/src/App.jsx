@@ -9,7 +9,7 @@ const App = () => {
   const showNavbar = !location.pathname.startsWith("/admin");
   return (
     <>
-      <Toaster position="bottom-right" reverseOrder={false} />
+      <Toaster position="top-center" reverseOrder={false} />
       {showNavbar && <Navbar />}
       <AppRoutes />
     </>

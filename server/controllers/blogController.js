@@ -2,6 +2,7 @@ import fs from "fs";
 import imagekit from "../configs/imageKit.js";
 import Blog from "../models/Blog.js";
 import Comment from "../models/Comment.js";
+import { handleError } from "../helpers/errorHandler.js";
 
 export const addBlog = async (req, res) => {
   try {
@@ -9,7 +10,7 @@ export const addBlog = async (req, res) => {
       req.body.blog
     );
     const imageFile = req.file;
-    if (title && description && category && isPublished && imageFile) {
+    if (title && description && category && imageFile) {
       // Handle image upload to ImageKit
       const fileBuffer = fs.readFileSync(imageFile.path);
       const imageUploadResponse = await imagekit.upload({
@@ -46,7 +47,9 @@ export const addBlog = async (req, res) => {
         success: true,
       });
     } else {
-      return res.status(401).json({ message: error.message, success: false });
+      return res
+        .status(401)
+        .json({ message: "Blog added failed", success: false });
     }
   } catch (error) {
     return handleError(res, error);

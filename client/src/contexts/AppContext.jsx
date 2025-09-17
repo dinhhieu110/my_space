@@ -1,5 +1,4 @@
-import { use } from "react";
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
@@ -60,7 +59,7 @@ const AppContextProvider = ({ children }) => {
 };
 
 export const useGlobalState = () => {
-  const context = use(AppContext);
+  const context = useContext(AppContext);
   if (context === undefined) {
     throw new Error("useAppContext must be used within a AppContextProvider");
   }
