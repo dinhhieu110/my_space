@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { assets, blogCategories } from "../../assets/assets";
 import Quill from "quill";
+import { useGlobalState } from "../../contexts/AppContext";
+import toast from "react-hot-toast";
 
 const AddBlog = () => {
   const editorRef = useRef(null);
@@ -12,8 +14,11 @@ const AddBlog = () => {
     subTitle: "",
     category: "Startup",
     isPublished: false,
+    description: "",
   };
   const [form, setForm] = useState(INIT_FORM);
+  const { axios } = useGlobalState();
+  const [loading, setLoading] = useState(false);
 
   const onFormChange = (e) => {
     const { name, value, files = [], checked = false } = e.target;
@@ -34,7 +39,34 @@ const AddBlog = () => {
 
   const handleAddBlog = async (e) => {
     e.preventDefault();
-    console.log("form: ", form);
+    try {
+      console.log("form:", form);
+      setLoading(true);
+      const formData = new FormData();
+      formData.append(
+        "blog",
+        JSON.stringify({
+          title: form.title,
+          subTitle: form.subTitle,
+          category: form.category,
+          isPublished: form.isPublished,
+          description: quillRef.current.root.innerHTML,
+        })
+      );
+      formData.append("image", form.image);
+      const { data } = await axios.post(`/blogs/add`, formData);
+      if (data.success) {
+        toast.success(data.message);
+        setForm(INIT_FORM);
+        quillRef.current.root.innerHTML = "";
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const generateContent = () => {};
@@ -90,7 +122,7 @@ const AddBlog = () => {
           <button
             type="button"
             onClick={generateContent}
-            className="absolute bottom-1 right-2 ml-2 text-xs text-white bg-black/70 py-1.5 rounded hover:underline cursor-pointer"
+            className="absolute bottom-1 right-2 ml-2 text-xs text-white bg-black/70 hover:bg-black/60 py-1.5 rounded cursor-pointer px-2"
           >
             Generate with AI
           </button>
@@ -120,11 +152,12 @@ const AddBlog = () => {
           />
         </div>
         <button
+          disabled={loading}
           onClick={handleAddBlog}
           type="submit"
           className="mt-8 w-40 h-10 bg-primary text-white rounded cursor-pointer text-sm"
         >
-          Add Blog
+          {loading ? "Adding..." : "Add Blog"}
         </button>
       </div>
     </div>
