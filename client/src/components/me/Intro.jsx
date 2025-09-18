@@ -42,7 +42,7 @@ export default function Intro() {
           <h3 className="text-[20px] md:text-[30px]">
             Specializing in front-end development.
           </h3>
-          <div className="flex mt-8 space-x-1 items-center">
+          <div className="flex mt-8 space-x-1 items-center justify-center md:justify-start">
             <a
               rel="stylesheet"
               href="https://www.facebook.com/hieu.trandinh0110/"
