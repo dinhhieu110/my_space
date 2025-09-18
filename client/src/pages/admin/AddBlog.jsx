@@ -3,11 +3,12 @@ import { assets, blogCategories } from "../../assets/assets";
 import Quill from "quill";
 import { useGlobalState } from "../../contexts/AppContext";
 import toast from "react-hot-toast";
+import { parse } from "marked";
 
 const AddBlog = () => {
   const editorRef = useRef(null);
   const quillRef = useRef(null);
-
+  const [aiGenerating, setAIGenerating] = useState(false);
   const INIT_FORM = {
     image: null,
     title: "",
@@ -69,7 +70,24 @@ const AddBlog = () => {
     }
   };
 
-  const generateContent = () => {};
+  const generateContent = async () => {
+    if (!form.title) return toast.error("Title is required!");
+    try {
+      setAIGenerating(true);
+      const { data } = await axios.post("blogs/generate", {
+        prompt: form.title,
+      });
+      if (data.success) {
+        quillRef.current.root.innerHTML = parse(data.content);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setAIGenerating(false);
+    }
+  };
 
   useEffect(() => {
     if (!quillRef.current && editorRef.current) {
@@ -119,12 +137,18 @@ const AddBlog = () => {
         <p className="mt-4">Blog Description</p>
         <div className="max-w-lg h-74 pb-16 sm:pb-10 pt-2 relative">
           <div ref={editorRef}></div>
+          {loading && (
+            <div className="absolute right-0 top-0 bottom-0 left-0 flex items-center justify-center bg-black/10 mt-2">
+              <div className="w-8 h-8 rounded-full border-2 border-t-white animate-spin"></div>
+            </div>
+          )}
           <button
             type="button"
             onClick={generateContent}
             className="absolute bottom-1 right-2 ml-2 text-xs text-white bg-black/70 hover:bg-black/60 py-1.5 rounded cursor-pointer px-2"
+            disabled={aiGenerating}
           >
-            Generate with AI
+            {loading ? "Generating " : "Generate with AI"}
           </button>
         </div>
         <p className="mt-4">Blog Category</p>

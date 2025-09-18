@@ -3,6 +3,7 @@ import imagekit from "../configs/imageKit.js";
 import Blog from "../models/Blog.js";
 import Comment from "../models/Comment.js";
 import { handleError } from "../helpers/errorHandler.js";
+import gemini from "../configs/gemini.js";
 
 export const addBlog = async (req, res) => {
   try {
@@ -64,7 +65,7 @@ export const getAllBlogs = async (req, res) => {
     return res.status(200).json({
       message: "Get all blogs successfully",
       success: true,
-      blogs: blogs,
+      blogs,
     });
   } catch (error) {
     return handleError(res, error);
@@ -83,7 +84,7 @@ export const getBlogById = async (req, res) => {
     return res.status(200).json({
       message: "Get a specific blog successfully",
       success: true,
-      blog: blog,
+      blog,
     });
   } catch (error) {
     return handleError(res, error);
@@ -161,6 +162,18 @@ export const getBlogComments = async (req, res) => {
       comments: comments,
     });
   } catch (error) {
+    return handleError(res, error);
+  }
+};
+
+export const generateContent = async (req, res) => {
+  try {
+    const { prompt } = req.body;
+    const content = await gemini(
+      prompt + "Generate a blog content for this topic in simple text format"
+    );
+    return res.status(200).json({ content, success: true });
+  } catch {
     return handleError(res, error);
   }
 };
