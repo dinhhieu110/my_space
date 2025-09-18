@@ -29,7 +29,7 @@ const Navbar = () => {
           {path !== RoutePath.Blogs && (
             <button
               onClick={() => navigate(RoutePath.Blogs)}
-              className="flex items-center gap-2 rounded-full text-sm hover:scale-105 transition-all cursor-pointer bg-primary text-white px-10 py-2.5 min-w-[150px]"
+              className="flex items-center gap-2 rounded-full text-sm hover:scale-105 transition-all cursor-pointer bg-primary text-white px-4 py-2 md:px-10 md:py-2.5 md:min-w-[150px]"
             >
               Read blogs
               <FaBookReader className="w-3" />
@@ -38,14 +38,15 @@ const Navbar = () => {
           {path !== RoutePath.Base && (
             <button
               onClick={() => navigate(RoutePath.Base)}
-              className="flex items-center gap-2 rounded-full text-sm hover:scale-105 transition-all cursor-pointer bg-primary text-white px-10 py-2.5 min-w-[150px]"
+              className="flex items-center gap-2 rounded-full text-sm hover:scale-105 transition-all cursor-pointer bg-primary text-white px-4 py-2 md:px-10 md:py-2.5 md:min-w-[150px]"
             >
-              About me <FaInfoCircle className="w-3" />
+              About me
+              <FaInfoCircle className="w-3" />
             </button>
           )}
           <button
             onClick={() => navigate(RoutePath.AdminBase)}
-            className="flex items-center justify-around gap-2 rounded-full text-sm hover:scale-105 transition-all cursor-pointer bg-black text-white px-10 py-2.5 min-w-[150px]"
+            className="hidden md:flex items-center justify-around gap-2 rounded-full text-sm hover:scale-105 transition-all cursor-pointer bg-black text-white px-4 py-2 md:px-10 md:py-2.5 md:min-w-[150px]"
           >
             {token ? "Dashboard" : "Login"}
             {token ? <FaChartArea /> : <FaSignInAlt />}

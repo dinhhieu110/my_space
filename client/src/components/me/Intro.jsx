@@ -23,7 +23,7 @@ export default function Intro() {
     >
       {/* Left */}
       <div className="flex-1 overflow-hidden flex justify-center items-center">
-        <div className="h-[420px] w-[400px] xl:h-[520px] xl:w-[500px] bg-primary rounded-full flex justify-center items-end overflow-hidden ">
+        <div className="h-[320px] w-[300px] md:h-[420px] md:w-[400px] xl:h-[520px] xl:w-[500px] bg-primary rounded-full flex justify-center items-end overflow-hidden ">
           <img src={assets.avt} alt="avatar.png" className="h-full" />
         </div>
       </div>

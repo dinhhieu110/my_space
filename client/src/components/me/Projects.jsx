@@ -8,11 +8,11 @@ const Projects = () => {
   const [selectedCategory, setSelectedCategory] = React.useState("Enterprise");
 
   return (
-    <div id="projects" className="mt-16 pt-4">
-      <div className="flex justify-center gap-4 sm:gap-8 mb-10 relative">
+    <div id="projects" className="mt-8 md:mt-16 pt-4">
+      <div className="flex flex-col md:flex-row justify-center gap-2 md:gap-4 sm:gap-8 mb-10 relative mx-8 md:mx-0">
         {projectCategories.map((category) => {
           return (
-            <div key={category} className="relative">
+            <div key={category} className="relative text-center md:text-left">
               <button
                 onClick={() => setSelectedCategory(category)}
                 className={clsx("cursor-pointer text-gray-500", {
