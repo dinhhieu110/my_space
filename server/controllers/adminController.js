@@ -62,11 +62,11 @@ export const getDashboard = async (req, res) => {
     return res.status(200).json({
       message: "Get dashboard data successfully",
       success: true,
-      data: {
+      dashboard: {
         recentBlogs,
         totalBlogs,
         totalComments,
-        draftBlogs,
+        totalDraftBlogs,
       },
     });
   } catch (error) {

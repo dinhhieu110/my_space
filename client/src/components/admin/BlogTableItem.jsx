@@ -28,6 +28,8 @@ const BlogTableItem = ({ blog, fetchBlogs, index }) => {
   };
 
   const deleteBlog = async () => {
+    const confirm = window.alert("Are you sure want to delete this blog?");
+    if (!confirm) return;
     try {
       const { data } = await axios.delete(`/blogs/${blog._id}`);
       if (data.success) {
@@ -62,12 +64,11 @@ const BlogTableItem = ({ blog, fetchBlogs, index }) => {
         >
           {blog.isPublished ? "Unpublished" : "Published"}
         </button>
-        <div onClick={deleteBlog}>
-          <img
-            src={assets.cross_icon}
-            className="w-8 hover: scale-110 transition-all cursor-pointer"
-          />
-        </div>
+        <img
+          onClick={deleteBlog}
+          src={assets.cross_icon}
+          className="w-8 hover: scale-110 transition-all cursor-pointer"
+        />
       </td>
     </tr>
   );

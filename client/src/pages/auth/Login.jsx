@@ -18,7 +18,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/api/admin/login", loginForm);
+      const { data } = await axios.post("/admin/login", loginForm);
       if (data?.success) {
         setToken(data.token);
         setLoginForm(INIT_FORM);

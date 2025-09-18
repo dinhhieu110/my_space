@@ -4,7 +4,7 @@ const commentSchema = new mongoose.Schema(
   {
     blogId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "blog",
+      ref: "Blog",
       required: true,
     },
     author: { type: String, required: true },

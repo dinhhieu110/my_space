@@ -19,5 +19,5 @@ adminRouter.get("/comments", auth, getAllAdminComments);
 adminRouter.delete("/comments/:id", auth, deleteCommentById);
 adminRouter.patch("/comments/:id/approve", auth, approveCommentById);
 
-adminRouter.get("/dashboard", auth, getDashboard);
+adminRouter.get("/dashboard", getDashboard);
 export default adminRouter;

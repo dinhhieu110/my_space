@@ -1,16 +1,28 @@
 import { useEffect, useState } from "react";
 import { assets, dashboard_data } from "../../assets/assets";
 import BlogTableItem from "../../components/admin/BlogTableItem";
+import toast from "react-hot-toast";
+import { useGlobalState } from "../../contexts/AppContext";
 const Dashboard = () => {
   const [dashboardData, setDashboardData] = useState({
-    blogs: 0,
-    comments: 0,
-    drafts: 0,
+    totalBlogs: 0,
+    totalComments: 0,
+    totalDraftBlogs: 0,
     recentBlogs: [],
   });
+  const { axios } = useGlobalState();
 
   const fetchDashBoard = async () => {
-    setDashboardData(dashboard_data);
+    try {
+      const { data } = await axios.get("/admin/dashboard");
+      if (data.success) {
+        setDashboardData(data.dashboard);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   useEffect(() => {
@@ -24,7 +36,7 @@ const Dashboard = () => {
           <img src={assets.dashboard_icon_1} alt="dashboard icon 1" />
           <div>
             <p className="text-xl font-semibold text-gray-600">
-              {dashboard_data.blogs}
+              {dashboardData.totalBlogs}
             </p>
             <p className="text-gray-400 font-light">Blogs</p>
           </div>
@@ -33,7 +45,7 @@ const Dashboard = () => {
           <img src={assets.dashboard_icon_2} alt="dashboard icon 2" />
           <div>
             <p className="text-xl font-semibold text-gray-600">
-              {dashboard_data.comments}
+              {dashboardData.totalComments}
             </p>
             <p className="text-gray-400 font-light">Comments</p>
           </div>
@@ -42,7 +54,7 @@ const Dashboard = () => {
           <img src={assets.dashboard_icon_3} alt="dashboard icon 3" />
           <div>
             <p className="text-xl font-semibold text-gray-600">
-              {dashboard_data.drafts}
+              {dashboardData.totalDraftBlogs}
             </p>
             <p className="text-gray-400 font-light">Drafts</p>
           </div>

@@ -1,12 +1,16 @@
-import React from "react";
 import { assets } from "../../assets/assets";
 import Sidebar from "../../components/admin/Sidebar";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { FaSignOutAlt } from "react-icons/fa";
+import { useGlobalState } from "../../contexts/AppContext";
 
 const Layout = () => {
-  const navigate = useNavigate();
+  const { navigate, setToken, axios } = useGlobalState();
+
   const logout = () => {
+    localStorage.removeItem("token");
+    axios.defaults.headers.common["Authorization"] = null;
+    setToken(null);
     navigate("/");
   };
   return (
