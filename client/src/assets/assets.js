@@ -45,6 +45,8 @@ import project_doctor from "./project_doctor.png";
 import project_chat from "./project_chat.png";
 import project_trade from "./project_trade.png";
 import project_new from "./project_new.jpg";
+import linkedin from "./linkedin.png";
+import github from "./gihub.png";
 
 export const assets = {
   down,
@@ -53,6 +55,8 @@ export const assets = {
   googleplus_icon,
   twitter_icon,
   logo,
+  github,
+  linkedin,
   arrow,
   logo_light,
   blog_icon,

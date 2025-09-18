@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { project_data, projectCategories } from "../../assets/assets";
 import ProjectCard from "./ProjectCard";
 import clsx from "clsx";
 import { motion } from "motion/react";
+import CardSkeleton from "../common/CardSkeleton";
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = React.useState("Enterprise");
+  const [loadingProjects, setLoadingProjects] = useState(false);
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    setLoadingProjects(true);
+
+    const timer = setTimeout(() => {
+      setLoadingProjects(false);
+      setProjects(project_data);
+    }, 600);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div id="projects" className="mt-8 md:mt-16 pt-4">
@@ -35,15 +48,17 @@ const Projects = () => {
         })}
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 mb-24 mx-8 sm:mx-16 xl:mx-40">
-        {project_data
-          .filter((blog) =>
-            selectedCategory === "All"
-              ? true
-              : blog.category === selectedCategory
-          )
-          .map((blog) => (
-            <ProjectCard blog={blog} key={blog._id} />
-          ))}
+        {loadingProjects
+          ? Array.from({ length: 4 }).map((_, i) => <CardSkeleton key={i} />)
+          : projects
+              .filter((project) =>
+                selectedCategory === "All"
+                  ? true
+                  : project.category === selectedCategory
+              )
+              .map((project) => (
+                <ProjectCard project={project} key={project._id} />
+              ))}
       </div>
     </div>
   );

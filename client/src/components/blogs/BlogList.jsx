@@ -5,10 +5,11 @@ import BlogCard from "./BlogCard";
 import { motion } from "motion/react";
 import { useGlobalState } from "../../contexts/AppContext";
 import { useMemo } from "react";
+import CardSkeleton from "../common/CardSkeleton";
 
 const BlogList = () => {
   const [selectedCategory, setSelectedCategory] = React.useState("All");
-  const { blogs, fetchBlogs, filter } = useGlobalState();
+  const { blogs, fetchBlogs, filter, blogsLoading } = useGlobalState();
   const filteredBlogs = useMemo(() => {
     if (!filter) return blogs;
     return blogs.filter(
@@ -50,15 +51,15 @@ const BlogList = () => {
         })}
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 mb-24 mx-8 sm:mx-16 xl:mx-40">
-        {(filteredBlogs || [])
-          .filter((blog) =>
-            selectedCategory === "All"
-              ? true
-              : blog.category === selectedCategory
-          )
-          .map((blog) => (
-            <BlogCard blog={blog} key={blog._id} />
-          ))}
+        {blogsLoading
+          ? Array.from({ length: 4 }).map((_, i) => <CardSkeleton key={i} />)
+          : (filteredBlogs || [])
+              .filter((blog) =>
+                selectedCategory === "All"
+                  ? true
+                  : blog.category === selectedCategory
+              )
+              .map((blog) => <BlogCard blog={blog} key={blog._id} />)}
       </div>
     </div>
   );

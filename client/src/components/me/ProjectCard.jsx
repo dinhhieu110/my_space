@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
-const ProjectCard = ({ blog }) => {
-  const { _id, title, description, image, category } = blog;
+const ProjectCard = ({ project }) => {
+  const { _id, title, description, image, category } = project;
   const navigate = useNavigate();
   return (
     <div

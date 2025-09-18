@@ -12,7 +12,7 @@ export default function Intro() {
         showCursor: false,
         backSpeed: 100,
         backDelay: 1000,
-        strings: ["Front-End"],
+        strings: ["Software Engineer", "Fullstack Developer"],
       });
     }
   }, []);
@@ -37,13 +37,50 @@ export default function Intro() {
           </h1>
           <h3 className="text-[20px] md:text-[30px]">
             A <span ref={textRef} className="text-primary font-bold" />{" "}
-            Developer
+            {/* passionate about crafting modern and engaging front-end experiences */}
           </h3>
           <h3 className="text-[20px] md:text-[30px]">
-            It's my pleasure to collaborate with you.
+            Specializing in front-end development.
           </h3>
+          <div className="flex mt-8 space-x-1 items-center">
+            <a
+              rel="stylesheet"
+              href="https://www.facebook.com/hieu.trandinh0110/"
+              target="_blank"
+            >
+              <img
+                src={assets.facebook_icon}
+                alt="facebook"
+                width={50}
+                className="cursor-pointer transition-transform duration-300 hover:scale-110 hover:brightness-110 "
+              />
+            </a>
+            <a
+              rel="stylesheet"
+              href="https://www.linkedin.com/in/trandinhhieu/"
+              target="_blank"
+            >
+              <img
+                src={assets.linkedin}
+                alt="linkedin"
+                width={50}
+                className="cursor-pointer transition-transform duration-300 hover:scale-110 hover:brightness-110 "
+              />
+            </a>
+            <a
+              rel="stylesheet"
+              href="https://github.com/dinhhieu110"
+              target="_blank"
+            >
+              <img
+                src={assets.github}
+                alt="github"
+                width={38}
+                className="cursor-pointer transition-transform duration-300 hover:scale-110 hover:brightness-110"
+              />
+            </a>
+          </div>
         </div>
-
         <a
           href="#projects"
           className="hidden xl:block absolute bottom-2 left-1/2 -translate-x-1/2 md:left-[40%] md:translate-x-0"

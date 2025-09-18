@@ -8,7 +8,6 @@ const Blogs = () => {
     <>
       <Hero />
       <BlogList />
-      <NewsLetter />
       <Footer />
     </>
   );

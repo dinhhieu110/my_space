@@ -12,25 +12,33 @@ const AppContextProvider = ({ children }) => {
   const navigate = useNavigate();
   const [token, setToken] = useState(localStorage.getItem("token") || null);
   const [blogs, setBlogs] = useState([]);
+  const [blogsLoading, setBlogsLoading] = useState(false);
+  const [projectsLoading, setProjectsLoading] = useState(false);
   const [projects, setProjects] = useState([]);
 
   const [filter, setFilter] = useState("");
 
   const fetchBlogs = async () => {
     try {
+      setBlogsLoading(true);
       const { data } = await axios.get("/blogs/all");
       data.success ? setBlogs(data.blogs) : toast.error(data.message);
     } catch (error) {
       toast.error(error.message);
+    } finally {
+      setBlogsLoading(false);
     }
   };
 
   const fetchProjects = async () => {
     try {
+      setProjectsLoading(true);
       const response = await axios.get("/projects");
       setProjects(response.data);
     } catch (error) {
       console.error("Error fetching projects:", error);
+    } finally {
+      setProjectsLoading(false);
     }
   };
 
@@ -53,7 +61,9 @@ const AppContextProvider = ({ children }) => {
     filter,
     setFilter,
     fetchBlogs,
+    blogsLoading,
     fetchProjects,
+    projectsLoading,
   };
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;
 };
